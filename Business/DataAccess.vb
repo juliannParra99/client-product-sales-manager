@@ -1,12 +1,11 @@
-﻿Imports System
-Imports System.Data
+﻿Imports System.Configuration
 Imports System.Data.SqlClient
 
 Namespace Business
     Public Class DataAccess
         Private connection As SqlConnection
         Private command As SqlCommand
-        Private _reader As SqlDataReader ' Cambiado a _reader
+        Private _reader As SqlDataReader
 
         ' Public property to access the SqlDataReader content
         Public ReadOnly Property Reader As SqlDataReader
@@ -15,19 +14,20 @@ Namespace Business
             End Get
         End Property
 
-        ' Constructor
-        Public Sub New(connectionString As String)
+        ' Constructor que lee la cadena de conexión del archivo App.config
+        Public Sub New()
+            Dim connectionString As String = ConfigurationManager.ConnectionStrings("MyConnectionString").ConnectionString
             connection = New SqlConnection(connectionString)
             command = New SqlCommand()
         End Sub
 
-        ' Set the SQL query to execute
+        ' Establecer la consulta SQL a ejecutar
         Public Sub SetQuery(query As String)
             command.CommandType = CommandType.Text
             command.CommandText = query
         End Sub
 
-        ' Execute a query and read data
+        ' Ejecutar una consulta y leer datos
         Public Sub ExecuteReader()
             command.Connection = connection
             Try
@@ -38,7 +38,7 @@ Namespace Business
             End Try
         End Sub
 
-        ' Close the connection and reader
+        ' close the conexion
         Public Sub CloseConnection()
             If _reader IsNot Nothing AndAlso Not _reader.IsClosed Then
                 _reader.Close()
@@ -48,7 +48,7 @@ Namespace Business
             End If
         End Sub
 
-        ' Execute non-query SQL commands such as INSERT, UPDATE, DELETE
+        ' Ejecutar comandos SQL que no devuelven resultados (INSERT, UPDATE, DELETE)
         Public Sub ExecuteNonQuery()
             command.Connection = connection
             Try
@@ -63,7 +63,7 @@ Namespace Business
             End Try
         End Sub
 
-        ' Configure SQL queries with parameters
+        ' Configurar consultas SQL con parámetros
         Public Sub SetParameter(parameterName As String, value As Object)
             command.Parameters.AddWithValue(parameterName, value)
         End Sub

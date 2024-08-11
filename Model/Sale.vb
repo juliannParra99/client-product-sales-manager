@@ -1,6 +1,6 @@
 ﻿Imports System
 
-Namespace Model
+Namespace Models
     Public Class Sale
         Public Property Id As Integer
         Public Property ClientId As Integer

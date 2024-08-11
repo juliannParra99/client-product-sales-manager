@@ -3,7 +3,7 @@ Imports System.ComponentModel
 Imports System.Reflection
 
 
-Namespace Model
+Namespace Models
     Public Class Product
         <DisplayName("Id")>
         Public Property Id As Integer
