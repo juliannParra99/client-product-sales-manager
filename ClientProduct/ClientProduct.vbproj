@@ -92,6 +92,18 @@
     <Compile Include="frmAddProduct.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAddSale.Designer.vb">
+      <DependentUpon>frmAddSale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSale.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateSale.Designer.vb">
+      <DependentUpon>frmUpdateSale.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateSale.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -107,6 +119,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="frmSalesManagement.Designer.vb">
+      <DependentUpon>frmSalesManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalesManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -118,11 +136,20 @@
     <EmbeddedResource Include="frmAddProduct.resx">
       <DependentUpon>frmAddProduct.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSale.resx">
+      <DependentUpon>frmAddSale.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateSale.resx">
+      <DependentUpon>frmUpdateSale.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesManagement.resx">
+      <DependentUpon>frmSalesManagement.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -38,3 +38,6 @@ C:\Users\Usuario\OneDrive\Escritorio\Projects\C#\repos\ClientProduct\obj\Debug\C
 C:\Users\Usuario\OneDrive\Escritorio\Projects\C#\repos\ClientProduct\obj\Debug\ClientProduct.pdb
 C:\Users\Usuario\OneDrive\Escritorio\Projects\C#\repos\ClientProduct\obj\Debug\ClientProduct.frmAddClients.resources
 C:\Users\Usuario\OneDrive\Escritorio\Projects\C#\repos\ClientProduct\obj\Debug\ClientProduct.frmAddProduct.resources
+C:\Users\Usuario\OneDrive\Escritorio\Projects\C#\repos\ClientProduct\obj\Debug\ClientProduct.frmAddSale.resources
+C:\Users\Usuario\OneDrive\Escritorio\Projects\C#\repos\ClientProduct\obj\Debug\ClientProduct.frmSalesManagement.resources
+C:\Users\Usuario\OneDrive\Escritorio\Projects\C#\repos\ClientProduct\obj\Debug\ClientProduct.frmUpdateSale.resources

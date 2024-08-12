@@ -180,6 +180,9 @@ Public Class Form1
 
     End Sub
 
+    Private Sub btnSalesManagment_Click(sender As Object, e As EventArgs) Handles btnSalesManagment.Click
 
-
+        Dim salesManagement As New frmSalesManagement()
+        salesManagement.ShowDialog()
+    End Sub
 End Class

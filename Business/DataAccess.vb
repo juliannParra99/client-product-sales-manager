@@ -21,13 +21,13 @@ Namespace Business
             command = New SqlCommand()
         End Sub
 
-        ' Establecer la consulta SQL a ejecutar
+        ' set the query to execue
         Public Sub SetQuery(query As String)
             command.CommandType = CommandType.Text
             command.CommandText = query
         End Sub
 
-        ' Ejecutar una consulta y leer datos
+        ' execute and read the data
         Public Sub ExecuteReader()
             command.Connection = connection
             Try
@@ -67,5 +67,22 @@ Namespace Business
         Public Sub SetParameter(parameterName As String, value As Object)
             command.Parameters.AddWithValue(parameterName, value)
         End Sub
+
+        ' Execute a query that returns a single value
+        Public Function ExecuteScalar() As Object
+            command.Connection = connection
+            Try
+                connection.Open()
+                Return command.ExecuteScalar()
+            Catch ex As Exception
+                Throw New Exception("An error occurred while executing the scalar query.", ex)
+            Finally
+                If connection.State = ConnectionState.Open Then
+                    connection.Close()
+                End If
+            End Try
+        End Function
     End Class
+
+
 End Namespace

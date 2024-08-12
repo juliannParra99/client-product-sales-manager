@@ -84,4 +84,8 @@ Public Class frmAddProduct
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Close()
     End Sub
+
+    Private Sub frmAddProduct_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
