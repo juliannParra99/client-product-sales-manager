@@ -43,6 +43,26 @@ Public Class frmSalesManagement
     End Sub
 
     Private Sub btnUpdateSale_Click(sender As Object, e As EventArgs) Handles btnUpdateSale.Click
+        Try
+            ' verify if there is a row selected
+            If dgvSaleItems.SelectedRows.Count > 0 Then
+                ' get the row
+                Dim selectedRow As DataGridViewRow = dgvSaleItems.SelectedRows(0)
 
+                ' Get the saleItem object from the row 
+                Dim selectedSaleItem As SaleItem = CType(selectedRow.DataBoundItem, SaleItem)
+
+                ' 
+                Dim updateSaleForm As New frmUpdateSale(selectedSaleItem)
+                updateSaleForm.ShowDialog()
+
+                ' load the changes the user made
+                LoadSaleItems()
+            Else
+                MessageBox.Show("Please select a record to modify.")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message)
+        End Try
     End Sub
 End Class

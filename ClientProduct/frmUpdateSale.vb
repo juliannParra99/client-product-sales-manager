@@ -5,32 +5,58 @@ Public Class frmUpdateSale
     Private saleItem As SaleItem = Nothing
 
 
-    ' Constructor que acepta un parámetro
     Public Sub New(item As SaleItem)
-        ' Llamar al constructor base
         InitializeComponent()
 
-        ' Guardar el parámetro en la variable de instancia
         Me.saleItem = item
         PopulateFields()
-        ' Inicializar el formulario con los datos del saleItem
-    End Sub
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        Close()
     End Sub
 
     Private Sub btnAccept_Click(sender As Object, e As EventArgs) Handles btnAccept.Click
 
+        Dim saleBusiness As New SaleBusiness()
+
+        Try
+            ' Validate the required fields
+            If ValidateRequiredFields() Then
+                Return
+            End If
+
+            ' Update the SaleItem with the new values from the form
+            saleItem.ProductId = Convert.ToInt32(txtIdProduct.Text)
+            saleItem.UnitPrice = Convert.ToDouble(txtUnitPrice.Text)
+            saleItem.Quantity = Convert.ToInt32(txtQuantity.Text)
+            saleItem.TotalPrice = saleItem.UnitPrice * saleItem.Quantity
+
+            ' Update the SaleItem in the database
+            saleBusiness.UpdateSaleItem(saleItem)
+
+            ' Recalculate and update the total sale amount in the database
+            saleBusiness.UpdateSaleTotal(saleItem.SaleId)
+
+            ' Show a success message
+            MessageBox.Show("Sale item updated successfully.")
+            Close()
+
+        Catch ex As Exception
+            ' Show error message and copy to clipboard
+            Dim errorMessage As String = $"An error occurred: {ex.Message}" & vbCrLf &
+                                         $"Stack Trace: {ex.StackTrace}"
+            Clipboard.SetText(errorMessage)
+            MessageBox.Show(errorMessage)
+        End Try
     End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Close()
+    End Sub
+
 
     Private Sub PopulateFields()
         If SaleItem IsNot Nothing Then
             ' Llenar los campos relacionados con la venta
             Dim saleBusiness As New SaleBusiness()
-            Dim sale As Sale = saleBusiness.GetSaleById(SaleItem.SaleId)
-
-            txtIdClient.Text = sale.ClientId.ToString()
-            dtmSaleDate.Value = sale.Date
+            Dim sale As Sale = saleBusiness.GetSaleById(saleItem.SaleId)
 
             ' Llenar los campos relacionados con el SaleItem
             txtIdProduct.Text = SaleItem.ProductId.ToString()
@@ -42,11 +68,10 @@ Public Class frmUpdateSale
     Private Function ValidateRequiredFields() As Boolean
 
 
-        Dim valid As Boolean = False
 
         ' Check if required fields are empty
-        If String.IsNullOrEmpty(txtIdClient.Text) OrElse
-       String.IsNullOrEmpty(txtIdProduct.Text) OrElse
+
+        If String.IsNullOrEmpty(txtIdProduct.Text) OrElse
        String.IsNullOrEmpty(txtUnitPrice.Text) OrElse
        String.IsNullOrEmpty(txtQuantity.Text) Then
             MessageBox.Show("Please fill all required fields.")

@@ -83,17 +83,17 @@ Namespace Business
 
         ' Updates the total amount for a sale based on the sum of items' prices.
         'The ID of the sale to update.
-        Public Sub UpdateSaleTotal(sale As Sale)
+        Public Sub UpdateSaleTotal(saleId As Integer)
             Dim query As String = "UPDATE ventas SET Total = (SELECT SUM(PrecioTotal) FROM ventasitems WHERE IDVenta = @SaleId) WHERE ID = @SaleId"
             dataAccess.SetQuery(query)
-            dataAccess.SetParameter("@SaleId", sale.Id)
+            dataAccess.SetParameter("@SaleId", saleId)
 
             Try
                 dataAccess.ExecuteNonQuery()
             Catch ex As SqlException
                 Dim errorMessage As String = $"SQL Error: {ex.Number} - {ex.Message}" & vbCrLf &
                                      $"Query: {query}" & vbCrLf &
-                                     $"Sale ID: {sale.Id}" & vbCrLf &
+                                     $"Sale ID: {saleId}" & vbCrLf &
                                      $"Stack Trace: {ex.StackTrace}"
 
                 Clipboard.SetText(ex.ToString())
@@ -104,7 +104,7 @@ Namespace Business
             Catch ex As Exception
                 Dim errorMessage As String = $"An unexpected error occurred: {ex.Message}" & vbCrLf &
                                      $"Query: {query}" & vbCrLf &
-                                     $"Sale ID: {sale.Id}" & vbCrLf &
+                                     $"Sale ID: {saleId}" & vbCrLf &
                                      $"Stack Trace: {ex.StackTrace}"
 
                 Clipboard.SetText(errorMessage)

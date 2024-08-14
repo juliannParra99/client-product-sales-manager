@@ -50,7 +50,7 @@ Public Class frmAddSale
             saleBusiness.AddSaleItems(saleId, saleItems)
 
             ' Update the sale total in the database
-            saleBusiness.UpdateSaleTotal(sale)
+            saleBusiness.UpdateSaleTotal(sale.Id)
 
 
             MessageBox.Show("Sale item added successfully.")

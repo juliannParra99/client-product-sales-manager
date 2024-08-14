@@ -23,7 +23,6 @@ Partial Class frmUpdateSale
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.dtmSaleDate = New System.Windows.Forms.DateTimePicker()
         Me.txtQuantity = New System.Windows.Forms.TextBox()
         Me.txtUnitPrice = New System.Windows.Forms.TextBox()
         Me.lblUnitPrice = New System.Windows.Forms.Label()
@@ -31,16 +30,12 @@ Partial Class frmUpdateSale
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnAccept = New System.Windows.Forms.Button()
         Me.lblIdProduct = New System.Windows.Forms.Label()
-        Me.lblSaleDate = New System.Windows.Forms.Label()
-        Me.lblIdClient = New System.Windows.Forms.Label()
         Me.txtIdProduct = New System.Windows.Forms.TextBox()
-        Me.txtIdClient = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.dtmSaleDate)
         Me.GroupBox1.Controls.Add(Me.txtQuantity)
         Me.GroupBox1.Controls.Add(Me.txtUnitPrice)
         Me.GroupBox1.Controls.Add(Me.lblUnitPrice)
@@ -48,25 +43,13 @@ Partial Class frmUpdateSale
         Me.GroupBox1.Controls.Add(Me.btnCancel)
         Me.GroupBox1.Controls.Add(Me.btnAccept)
         Me.GroupBox1.Controls.Add(Me.lblIdProduct)
-        Me.GroupBox1.Controls.Add(Me.lblSaleDate)
-        Me.GroupBox1.Controls.Add(Me.lblIdClient)
         Me.GroupBox1.Controls.Add(Me.txtIdProduct)
-        Me.GroupBox1.Controls.Add(Me.txtIdClient)
         Me.GroupBox1.Location = New System.Drawing.Point(220, 28)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(360, 394)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Add Sale"
-        '
-        'dtmSaleDate
-        '
-        Me.dtmSaleDate.CustomFormat = "yyyy-MM-dd"
-        Me.dtmSaleDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtmSaleDate.Location = New System.Drawing.Point(122, 86)
-        Me.dtmSaleDate.Name = "dtmSaleDate"
-        Me.dtmSaleDate.Size = New System.Drawing.Size(155, 20)
-        Me.dtmSaleDate.TabIndex = 14
         '
         'txtQuantity
         '
@@ -127,37 +110,12 @@ Partial Class frmUpdateSale
         Me.lblIdProduct.TabIndex = 5
         Me.lblIdProduct.Text = "ID Product:"
         '
-        'lblSaleDate
-        '
-        Me.lblSaleDate.AutoSize = True
-        Me.lblSaleDate.Location = New System.Drawing.Point(26, 86)
-        Me.lblSaleDate.Name = "lblSaleDate"
-        Me.lblSaleDate.Size = New System.Drawing.Size(57, 13)
-        Me.lblSaleDate.TabIndex = 4
-        Me.lblSaleDate.Text = "Sale Date:"
-        '
-        'lblIdClient
-        '
-        Me.lblIdClient.AutoSize = True
-        Me.lblIdClient.Location = New System.Drawing.Point(35, 44)
-        Me.lblIdClient.Name = "lblIdClient"
-        Me.lblIdClient.Size = New System.Drawing.Size(45, 13)
-        Me.lblIdClient.TabIndex = 3
-        Me.lblIdClient.Text = "Id Client"
-        '
         'txtIdProduct
         '
         Me.txtIdProduct.Location = New System.Drawing.Point(122, 118)
         Me.txtIdProduct.Name = "txtIdProduct"
         Me.txtIdProduct.Size = New System.Drawing.Size(155, 20)
         Me.txtIdProduct.TabIndex = 2
-        '
-        'txtIdClient
-        '
-        Me.txtIdClient.Location = New System.Drawing.Point(122, 41)
-        Me.txtIdClient.Name = "txtIdClient"
-        Me.txtIdClient.Size = New System.Drawing.Size(155, 20)
-        Me.txtIdClient.TabIndex = 0
         '
         'frmUpdateSale
         '
@@ -174,7 +132,6 @@ Partial Class frmUpdateSale
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents dtmSaleDate As DateTimePicker
     Friend WithEvents txtQuantity As TextBox
     Friend WithEvents txtUnitPrice As TextBox
     Friend WithEvents lblUnitPrice As Label
@@ -182,8 +139,5 @@ Partial Class frmUpdateSale
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnAccept As Button
     Friend WithEvents lblIdProduct As Label
-    Friend WithEvents lblSaleDate As Label
-    Friend WithEvents lblIdClient As Label
     Friend WithEvents txtIdProduct As TextBox
-    Friend WithEvents txtIdClient As TextBox
 End Class
