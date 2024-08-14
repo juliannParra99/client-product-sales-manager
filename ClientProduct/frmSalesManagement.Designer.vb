@@ -26,6 +26,8 @@ Partial Class frmSalesManagement
         Me.btnUpdateSale = New System.Windows.Forms.Button()
         Me.btnDeleteSale = New System.Windows.Forms.Button()
         Me.dgvSaleItems = New System.Windows.Forms.DataGridView()
+        Me.lblTotalItems = New System.Windows.Forms.Label()
+        Me.lblTotalSoldItems = New System.Windows.Forms.Label()
         CType(Me.dgvSaleItems, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -64,11 +66,31 @@ Partial Class frmSalesManagement
         Me.dgvSaleItems.Size = New System.Drawing.Size(521, 150)
         Me.dgvSaleItems.TabIndex = 3
         '
+        'lblTotalItems
+        '
+        Me.lblTotalItems.AutoSize = True
+        Me.lblTotalItems.Location = New System.Drawing.Point(397, 233)
+        Me.lblTotalItems.Name = "lblTotalItems"
+        Me.lblTotalItems.Size = New System.Drawing.Size(116, 13)
+        Me.lblTotalItems.TabIndex = 4
+        Me.lblTotalItems.Text = "Total Price Sold Items: "
+        '
+        'lblTotalSoldItems
+        '
+        Me.lblTotalSoldItems.AutoSize = True
+        Me.lblTotalSoldItems.Location = New System.Drawing.Point(519, 233)
+        Me.lblTotalSoldItems.Name = "lblTotalSoldItems"
+        Me.lblTotalSoldItems.Size = New System.Drawing.Size(10, 13)
+        Me.lblTotalSoldItems.TabIndex = 5
+        Me.lblTotalSoldItems.Text = "."
+        '
         'frmSalesManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lblTotalSoldItems)
+        Me.Controls.Add(Me.lblTotalItems)
         Me.Controls.Add(Me.dgvSaleItems)
         Me.Controls.Add(Me.btnDeleteSale)
         Me.Controls.Add(Me.btnUpdateSale)
@@ -77,6 +99,7 @@ Partial Class frmSalesManagement
         Me.Text = "SalesManagement"
         CType(Me.dgvSaleItems, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -84,4 +107,6 @@ Partial Class frmSalesManagement
     Friend WithEvents btnUpdateSale As Button
     Friend WithEvents btnDeleteSale As Button
     Friend WithEvents dgvSaleItems As DataGridView
+    Friend WithEvents lblTotalItems As Label
+    Friend WithEvents lblTotalSoldItems As Label
 End Class

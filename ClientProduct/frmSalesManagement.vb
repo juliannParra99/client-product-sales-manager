@@ -4,6 +4,7 @@ Imports Business.Business
 Imports Model.Models
 
 Public Class frmSalesManagement
+    Dim totalPriceSoldItems As Single
 
     Private Sub frmSalesManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadSaleItems()
@@ -17,6 +18,9 @@ Public Class frmSalesManagement
             dgvSaleItems.DataSource = saleItemsList
 
             ConfigurarColumnas()
+            totalPriceSoldItems = saleBusiness.TotalPriceSoldItems()
+
+            lblTotalSoldItems.Text = totalPriceSoldItems
 
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message)
@@ -64,5 +68,35 @@ Public Class frmSalesManagement
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub btnDeleteSale_Click(sender As Object, e As EventArgs) Handles btnDeleteSale.Click
+        Dim saleBusiness As New SaleBusiness()
+        Dim saleItem As New SaleItem()
+
+        Try
+            If dgvSaleItems.CurrentRow Is Nothing Then
+                MessageBox.Show("Please select a record to delete.")
+                Return
+            End If
+
+            Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+            If result = DialogResult.Yes Then
+                saleItem = CType(dgvSaleItems.CurrentRow.DataBoundItem, SaleItem)
+                saleBusiness.DeleteSaleItem(saleItem)
+                MessageBox.Show("Sale Item deleted successfully.")
+
+                LoadSaleItems()
+                'update the Total for the sum of all those items which belong to that Sale into the table Ventas 
+                saleBusiness.UpdateSaleTotal(saleItem.SaleId)
+
+            End If
+
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 End Class

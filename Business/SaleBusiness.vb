@@ -206,5 +206,36 @@ Namespace Business
         End Function
 
 
+        Public Sub DeleteSaleItem(saleItem As SaleItem)
+            dataAccess.SetQuery("DELETE FROM ventasItems WHERE ID = @saleItemId")
+            dataAccess.SetParameter("@saleItemId", saleItem.Id)
+            dataAccess.ExecuteNonQuery()
+        End Sub
+
+        ' get the sum of all the total prices from Item sold
+        Public Function TotalPriceSoldItems() As Single
+            Dim totalSum As Single = 0.0F
+
+            Try
+                ' Set the query to get the sum of PrecioTotal
+                dataAccess.SetQuery("SELECT SUM(PrecioTotal) FROM ventasitems")
+
+                ' Execute the query and retrieve the result
+                Dim result = dataAccess.ExecuteScalar()
+
+                ' Check if the result is not DBNull
+                If result IsNot DBNull.Value Then
+                    totalSum = Convert.ToSingle(result)
+                End If
+
+            Catch ex As Exception
+                ' Handle any potential exceptions
+                MessageBox.Show($"An error occurred: {ex.Message}")
+            End Try
+
+            Return totalSum
+        End Function
+
+
     End Class
 End Namespace

@@ -31,6 +31,7 @@ Public Class frmAddSale
             ' If no sale exists, create a new one
             If saleId = 0 Then
                 saleId = saleBusiness.AddSale(sale)
+                sale.Id = saleId
             Else
                 sale.Id = saleId ' Assign the existing sale ID to the sale object
             End If
