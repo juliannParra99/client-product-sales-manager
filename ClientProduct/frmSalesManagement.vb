@@ -14,8 +14,11 @@ Public Class frmSalesManagement
 
         Try
             Dim saleItemsList As List(Of SaleItem) = saleBusiness.ListSaleItems()
+            'add to the dataGried View related with the sales their data source
+            Dim saleList As List(Of Sale) = saleBusiness.ListSales()
 
             dgvSaleItems.DataSource = saleItemsList
+            dgvSalesInfo.DataSource = saleList
 
             ConfigurarColumnas()
             totalPriceSoldItems = saleBusiness.TotalPriceSoldItems()
@@ -99,4 +102,9 @@ Public Class frmSalesManagement
         End Try
 
     End Sub
+
+    Private Sub btnSalesInfo_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
 End Class

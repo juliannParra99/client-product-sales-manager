@@ -168,21 +168,23 @@ Namespace Business
         ' Method to list the sales
         Public Function ListSales() As List(Of Sale)
             Dim lista As New List(Of Sale)()
-            dataAccess.SetQuery("SELECT ID, IDCliente, Fecha FROM ventas")
+            dataAccess.SetQuery("SELECT ID, IDCliente, Fecha, Total FROM ventas")
 
             Try
                 dataAccess.ExecuteReader()
 
                 While dataAccess.Reader.Read()
                     Dim aux As New Sale()
-                    aux.Id = dataAccess.Reader.GetInt32(0)
-                    aux.ClientId = dataAccess.Reader.GetInt32(1)
-                    aux.Date = dataAccess.Reader.GetDateTime(2)
+
+                    aux.Id = If(Not dataAccess.Reader.IsDBNull(0), dataAccess.Reader.GetInt32(0), 0)
+                    aux.ClientId = If(Not dataAccess.Reader.IsDBNull(1), dataAccess.Reader.GetInt32(1), 0)
+                    aux.Date = If(Not dataAccess.Reader.IsDBNull(2), dataAccess.Reader.GetDateTime(2), DateTime.MinValue)
+                    aux.Total = If(Not dataAccess.Reader.IsDBNull(3), dataAccess.Reader.GetDouble(3), 0.0)
 
                     lista.Add(aux)
                 End While
             Catch ex As Exception
-                Throw ex
+                Throw ' 
             Finally
                 dataAccess.CloseConnection()
             End Try
