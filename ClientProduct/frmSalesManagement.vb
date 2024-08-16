@@ -4,8 +4,9 @@ Imports Business.Business
 Imports Model.Models
 
 Public Class frmSalesManagement
-    Dim totalPriceSoldItems As Single
-
+    Private totalPriceSoldItems As Single
+    Private saleList As List(Of Sale)
+    Private saleItemsList As List(Of SaleItem)
     Private Sub frmSalesManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadSaleItems()
     End Sub
@@ -13,9 +14,9 @@ Public Class frmSalesManagement
         Dim saleBusiness As New SaleBusiness()
 
         Try
-            Dim saleItemsList As List(Of SaleItem) = saleBusiness.ListSaleItems()
+            saleItemsList = saleBusiness.ListSaleItems()
             'add to the dataGried View related with the sales their data source
-            Dim saleList As List(Of Sale) = saleBusiness.ListSales()
+            saleList = saleBusiness.ListSales()
 
             dgvSaleItems.DataSource = saleItemsList
             dgvSalesInfo.DataSource = saleList
@@ -107,4 +108,43 @@ Public Class frmSalesManagement
 
     End Sub
 
+    Private Sub txtIdSaleSearch_TextChanged(sender As Object, e As EventArgs) Handles txtIdSaleSearch.TextChanged
+        Dim filteredList As List(Of Sale)
+        Dim filter As String = txtIdSaleSearch.Text
+        Try
+            If filter <> "" Then
+                filteredList = saleList.FindAll(Function(c) c.Id.ToString().Contains(filter.ToUpper()))
+            Else
+                filteredList = saleList
+            End If
+
+            dgvSalesInfo.DataSource = Nothing
+            dgvSalesInfo.DataSource = filteredList
+            ConfigurarColumnas()
+
+
+        Catch ex As Exception
+            MessageBox.Show("An error occurred while filtering the data: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txtClienIdSearch_TextChanged(sender As Object, e As EventArgs) Handles txtClienIdSearch.TextChanged
+        Dim filteredList As List(Of Sale)
+        Dim filter As String = txtClienIdSearch.Text
+
+        Try
+            If filter <> "" Then
+                filteredList = saleList.FindAll(Function(c) c.ClientId.ToString().Contains(filter.ToUpper()))
+            Else
+                filteredList = saleList
+            End If
+
+            dgvSalesInfo.DataSource = Nothing
+            dgvSalesInfo.DataSource = filteredList
+            ConfigurarColumnas()
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

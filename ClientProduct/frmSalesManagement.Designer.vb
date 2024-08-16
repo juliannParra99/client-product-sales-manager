@@ -29,8 +29,12 @@ Partial Class frmSalesManagement
         Me.lblTotalItems = New System.Windows.Forms.Label()
         Me.lblTotalSoldItems = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtIdSaleSearch = New System.Windows.Forms.TextBox()
+        Me.lblIdSale = New System.Windows.Forms.Label()
         Me.dgvSalesInfo = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtClienIdSearch = New System.Windows.Forms.TextBox()
+        Me.lblClientId = New System.Windows.Forms.Label()
         CType(Me.dgvSaleItems, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvSalesInfo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,6 +96,10 @@ Partial Class frmSalesManagement
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtClienIdSearch)
+        Me.GroupBox1.Controls.Add(Me.lblClientId)
+        Me.GroupBox1.Controls.Add(Me.txtIdSaleSearch)
+        Me.GroupBox1.Controls.Add(Me.lblIdSale)
         Me.GroupBox1.Controls.Add(Me.dgvSalesInfo)
         Me.GroupBox1.Location = New System.Drawing.Point(40, 320)
         Me.GroupBox1.Name = "GroupBox1"
@@ -99,6 +107,22 @@ Partial Class frmSalesManagement
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Sales Info"
+        '
+        'txtIdSaleSearch
+        '
+        Me.txtIdSaleSearch.Location = New System.Drawing.Point(493, 58)
+        Me.txtIdSaleSearch.Name = "txtIdSaleSearch"
+        Me.txtIdSaleSearch.Size = New System.Drawing.Size(170, 20)
+        Me.txtIdSaleSearch.TabIndex = 2
+        '
+        'lblIdSale
+        '
+        Me.lblIdSale.AutoSize = True
+        Me.lblIdSale.Location = New System.Drawing.Point(448, 61)
+        Me.lblIdSale.Name = "lblIdSale"
+        Me.lblIdSale.Size = New System.Drawing.Size(43, 13)
+        Me.lblIdSale.TabIndex = 1
+        Me.lblIdSale.Text = "Sale Id:"
         '
         'dgvSalesInfo
         '
@@ -123,6 +147,22 @@ Partial Class frmSalesManagement
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Sold Items Info"
         '
+        'txtClienIdSearch
+        '
+        Me.txtClienIdSearch.Location = New System.Drawing.Point(493, 101)
+        Me.txtClienIdSearch.Name = "txtClienIdSearch"
+        Me.txtClienIdSearch.Size = New System.Drawing.Size(170, 20)
+        Me.txtClienIdSearch.TabIndex = 4
+        '
+        'lblClientId
+        '
+        Me.lblClientId.AutoSize = True
+        Me.lblClientId.Location = New System.Drawing.Point(448, 104)
+        Me.lblClientId.Name = "lblClientId"
+        Me.lblClientId.Size = New System.Drawing.Size(48, 13)
+        Me.lblClientId.TabIndex = 3
+        Me.lblClientId.Text = "Client Id:"
+        '
         'frmSalesManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -134,6 +174,7 @@ Partial Class frmSalesManagement
         Me.Text = "SalesManagement"
         CType(Me.dgvSaleItems, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.dgvSalesInfo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
@@ -150,4 +191,8 @@ Partial Class frmSalesManagement
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dgvSalesInfo As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents txtIdSaleSearch As TextBox
+    Friend WithEvents lblIdSale As Label
+    Friend WithEvents txtClienIdSearch As TextBox
+    Friend WithEvents lblClientId As Label
 End Class

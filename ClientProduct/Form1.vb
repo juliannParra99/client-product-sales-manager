@@ -6,6 +6,7 @@ Imports Business.Business
 
 Public Class Form1
     Private clientList As List(Of Client)
+    Private productList As List(Of Product)
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' change the data
@@ -38,7 +39,7 @@ Public Class Form1
 
         Try
             ' Retrieve the list of products
-            Dim productList As List(Of Product) = productBusiness.ListProducts()
+            productList = productBusiness.ListProducts()
 
             ' Set the list as the data source for the DataGridView
             dgvProducts.DataSource = productList
@@ -185,4 +186,57 @@ Public Class Form1
         Dim salesManagement As New frmSalesManagement()
         salesManagement.ShowDialog()
     End Sub
+
+
+    'filter clients for name and email
+    Private Sub txtName_TextChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged
+        Dim filteredList As List(Of Client)
+        Dim filter As String = txtName.Text
+
+        Try
+            ' If the filter is not empty, it searches for clients whose names contain the filter text, ignoring case sensitivity.
+            ' The filtered list is then displayed in the DataGridView. If the filter is empty, the entire client list is shown.
+            If filter <> "" Then
+                filteredList = clientList.FindAll(Function(c) c.Name.ToUpper().Contains(filter.ToUpper()) Or c.Email.ToUpper().Contains(filter.ToUpper()))
+            Else
+                ' if empty show the entire list
+                filteredList = clientList
+            End If
+
+            ' update the DataGridView with the filtered list
+            ' clean the older one
+            dgvClients.DataSource = Nothing
+            dgvClients.DataSource = filteredList
+            ConfigurarColumnas()
+
+        Catch ex As Exception
+            MessageBox.Show("An error occurred while filtering the data: " & ex.Message)
+        End Try
+    End Sub
+
+    'filter products by name and category
+    Private Sub txtNameOrCategory_TextChanged(sender As Object, e As EventArgs) Handles txtNameOrCategory.TextChanged
+        Dim filteredList As List(Of Product)
+        Dim filter As String = txtNameOrCategory.Text
+
+        Try
+            If Not String.IsNullOrWhiteSpace(filter) Then
+                ' Filter the list of products by name or category
+                filteredList = productList.FindAll(Function(p) p.Name.ToUpper().Contains(filter.ToUpper()) OrElse p.Category.ToUpper().Contains(filter.ToUpper()))
+            Else
+                ' If no filter is applied, show the entire list
+                filteredList = productList
+            End If
+
+            dgvProducts.DataSource = Nothing
+            dgvProducts.DataSource = filteredList
+            ConfigurarColumnas()
+
+        Catch ex As Exception
+            MessageBox.Show("An error occurred while filtering the products: " & ex.Message)
+        End Try
+    End Sub
+
+
+
 End Class
