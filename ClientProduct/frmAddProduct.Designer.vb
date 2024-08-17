@@ -49,7 +49,6 @@ Partial Class frmAddProduct
         Me.GroupBox1.Size = New System.Drawing.Size(358, 260)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "AddProduct"
         '
         'btnCancel
         '
@@ -124,7 +123,7 @@ Partial Class frmAddProduct
         Me.ClientSize = New System.Drawing.Size(771, 311)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmAddProduct"
-        Me.Text = "frmAddProduct"
+        Me.Text = "New Product"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)

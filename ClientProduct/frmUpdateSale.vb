@@ -18,7 +18,7 @@ Public Class frmUpdateSale
 
         Try
             ' Validate the required fields
-            If ValidateRequiredFields() Then
+            If Not ValidateRequiredFields() Then
                 Return
             End If
 
@@ -81,19 +81,32 @@ Public Class frmUpdateSale
         ' Validate numeric values
         Dim unitPrice As Double
         Dim quantity As Integer
+        Dim idProduct As Integer
 
+        If Not Integer.TryParse(txtIdProduct.Text, idProduct) OrElse idProduct <= 0 Then
+            MessageBox.Show("Product ID must be a positive integer greater than zero.")
+            Return False
+        End If
+
+        'if tryparse return false cause it couldn't convert the input into boolean, ask again
         If Not Double.TryParse(txtUnitPrice.Text, unitPrice) Then
             MessageBox.Show("Please enter a valid Unit Price.")
-            Return True
+            Return False
+        End If
+
+        'check if the unitPrice is higher than zero, if not, ask again
+        If unitPrice <= 0 Then
+            MessageBox.Show("Unit Price must be greater than zero.")
+            Return False
         End If
 
         If Not Integer.TryParse(txtQuantity.Text, quantity) OrElse quantity <= 0 Then
             MessageBox.Show("Please enter a valid Quantity (positive integer).")
-            Return True
+            Return False
         End If
 
         ' Additional validation checks can be added here
 
-        Return False
+        Return True
     End Function
 End Class

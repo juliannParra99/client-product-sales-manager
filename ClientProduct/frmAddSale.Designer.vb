@@ -166,7 +166,7 @@ Partial Class frmAddSale
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmAddSale"
-        Me.Text = "Sale Item"
+        Me.Text = "New sale"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)

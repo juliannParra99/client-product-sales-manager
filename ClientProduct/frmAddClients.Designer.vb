@@ -23,14 +23,14 @@ Partial Class frmAddClients
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txtName = New System.Windows.Forms.TextBox()
-        Me.txtPhone = New System.Windows.Forms.TextBox()
-        Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.lblClient = New System.Windows.Forms.Label()
-        Me.lblPhone = New System.Windows.Forms.Label()
-        Me.lblEmail = New System.Windows.Forms.Label()
-        Me.btnAccept = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnAccept = New System.Windows.Forms.Button()
+        Me.lblEmail = New System.Windows.Forms.Label()
+        Me.lblPhone = New System.Windows.Forms.Label()
+        Me.lblClient = New System.Windows.Forms.Label()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
+        Me.txtPhone = New System.Windows.Forms.TextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,64 +49,6 @@ Partial Class frmAddClients
         Me.GroupBox1.Size = New System.Drawing.Size(358, 260)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
-        '
-        'txtName
-        '
-        Me.txtName.Location = New System.Drawing.Point(122, 41)
-        Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(138, 20)
-        Me.txtName.TabIndex = 0
-        '
-        'txtPhone
-        '
-        Me.txtPhone.Location = New System.Drawing.Point(122, 79)
-        Me.txtPhone.Name = "txtPhone"
-        Me.txtPhone.Size = New System.Drawing.Size(138, 20)
-        Me.txtPhone.TabIndex = 1
-        '
-        'txtEmail
-        '
-        Me.txtEmail.Location = New System.Drawing.Point(122, 118)
-        Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(138, 20)
-        Me.txtEmail.TabIndex = 2
-        '
-        'lblClient
-        '
-        Me.lblClient.AutoSize = True
-        Me.lblClient.Location = New System.Drawing.Point(46, 48)
-        Me.lblClient.Name = "lblClient"
-        Me.lblClient.Size = New System.Drawing.Size(70, 13)
-        Me.lblClient.TabIndex = 3
-        Me.lblClient.Text = "Client Name: "
-        '
-        'lblPhone
-        '
-        Me.lblPhone.AutoSize = True
-        Me.lblPhone.Location = New System.Drawing.Point(35, 82)
-        Me.lblPhone.Name = "lblPhone"
-        Me.lblPhone.Size = New System.Drawing.Size(81, 13)
-        Me.lblPhone.TabIndex = 4
-        Me.lblPhone.Text = "Phone Number:"
-        '
-        'lblEmail
-        '
-        Me.lblEmail.AutoSize = True
-        Me.lblEmail.Location = New System.Drawing.Point(81, 121)
-        Me.lblEmail.Name = "lblEmail"
-        Me.lblEmail.Size = New System.Drawing.Size(35, 13)
-        Me.lblEmail.TabIndex = 5
-        Me.lblEmail.Text = "Email:"
-        '
-        'btnAccept
-        '
-        Me.btnAccept.Location = New System.Drawing.Point(49, 173)
-        Me.btnAccept.Name = "btnAccept"
-        Me.btnAccept.Size = New System.Drawing.Size(75, 23)
-        Me.btnAccept.TabIndex = 6
-        Me.btnAccept.Text = "Accept"
-        Me.btnAccept.UseVisualStyleBackColor = True
         '
         'btnCancel
         '
@@ -117,6 +59,63 @@ Partial Class frmAddClients
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
+        'btnAccept
+        '
+        Me.btnAccept.Location = New System.Drawing.Point(49, 173)
+        Me.btnAccept.Name = "btnAccept"
+        Me.btnAccept.Size = New System.Drawing.Size(75, 23)
+        Me.btnAccept.TabIndex = 6
+        Me.btnAccept.Text = "Accept"
+        Me.btnAccept.UseVisualStyleBackColor = True
+        '
+        'lblEmail
+        '
+        Me.lblEmail.AutoSize = True
+        Me.lblEmail.Location = New System.Drawing.Point(81, 121)
+        Me.lblEmail.Name = "lblEmail"
+        Me.lblEmail.Size = New System.Drawing.Size(35, 13)
+        Me.lblEmail.TabIndex = 5
+        Me.lblEmail.Text = "Email:"
+        '
+        'lblPhone
+        '
+        Me.lblPhone.AutoSize = True
+        Me.lblPhone.Location = New System.Drawing.Point(35, 82)
+        Me.lblPhone.Name = "lblPhone"
+        Me.lblPhone.Size = New System.Drawing.Size(81, 13)
+        Me.lblPhone.TabIndex = 4
+        Me.lblPhone.Text = "Phone Number:"
+        '
+        'lblClient
+        '
+        Me.lblClient.AutoSize = True
+        Me.lblClient.Location = New System.Drawing.Point(46, 48)
+        Me.lblClient.Name = "lblClient"
+        Me.lblClient.Size = New System.Drawing.Size(70, 13)
+        Me.lblClient.TabIndex = 3
+        Me.lblClient.Text = "Client Name: "
+        '
+        'txtEmail
+        '
+        Me.txtEmail.Location = New System.Drawing.Point(122, 118)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(138, 20)
+        Me.txtEmail.TabIndex = 2
+        '
+        'txtPhone
+        '
+        Me.txtPhone.Location = New System.Drawing.Point(122, 79)
+        Me.txtPhone.Name = "txtPhone"
+        Me.txtPhone.Size = New System.Drawing.Size(138, 20)
+        Me.txtPhone.TabIndex = 1
+        '
+        'txtName
+        '
+        Me.txtName.Location = New System.Drawing.Point(122, 41)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(138, 20)
+        Me.txtName.TabIndex = 0
+        '
         'frmAddClients
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -124,7 +123,7 @@ Partial Class frmAddClients
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmAddClients"
-        Me.Text = "frmAddClients"
+        Me.Text = "New Client"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)

@@ -192,6 +192,16 @@ Namespace Business
             Return lista
         End Function
 
+        Public Sub DeleteSaleById(saleId As Integer)
+            Try
+                dataAccess.SetQuery("DELETE FROM ventas WHERE ID = @id")
+                dataAccess.SetParameter("@id", saleId)
+                dataAccess.ExecuteNonQuery()
+            Catch ex As Exception
+                Throw
+            End Try
+        End Sub
+
         'in this part is important just to keep the date, and not include the hour. Otherwise the comparation will fail
         Public Function GetExistingSaleId(clientId As Integer, saleDate As Date) As Integer
             Dim query As String = "SELECT ID FROM ventas WHERE IDCliente = @ClientId AND CONVERT(date, Fecha) = CONVERT(date, @SaleDate)"

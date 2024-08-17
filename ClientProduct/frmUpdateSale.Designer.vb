@@ -49,7 +49,7 @@ Partial Class frmUpdateSale
         Me.GroupBox1.Size = New System.Drawing.Size(360, 394)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Add Sale"
+        Me.GroupBox1.Text = "Update Sale"
         '
         'txtQuantity
         '
@@ -124,7 +124,7 @@ Partial Class frmUpdateSale
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmUpdateSale"
-        Me.Text = "frmUpdateSale"
+        Me.Text = "Update Sale"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)

@@ -32,7 +32,7 @@ Public Class frmAddProduct
                 product = New Product()
             End If
 
-            If ValidateRequiredFields() Then
+            If Not ValidateRequiredFields() Then
                 Return
             End If
 
@@ -64,21 +64,26 @@ Public Class frmAddProduct
     Private Function ValidateRequiredFields() As Boolean
         If String.IsNullOrEmpty(txtName.Text) Then
             MessageBox.Show("Please enter the product's name.")
-            Return True
+            Return False
         End If
 
         If String.IsNullOrEmpty(txtPrice.Text) OrElse Not IsNumeric(txtPrice.Text) Then
             MessageBox.Show("Please enter a valid price for the product.")
-            Return True
+            Return False
+        End If
+
+        If txtPrice.Text <= 0 Then
+            MessageBox.Show("Price must be greater than zero.")
+            Return False
         End If
 
         If String.IsNullOrEmpty(txtCategory.Text) Then
             MessageBox.Show("Please enter the product's category.")
-            Return True
+            Return False
         End If
 
-        ' return False indicating no issues
-        Return False
+        ' return true indicating no issues
+        Return True
     End Function
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click

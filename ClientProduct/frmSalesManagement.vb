@@ -18,6 +18,9 @@ Public Class frmSalesManagement
             'add to the dataGried View related with the sales their data source
             saleList = saleBusiness.ListSales()
 
+            'if the value of total in a sale is = 0, will be deleted
+            RemoveZeroTotalSales(saleList)
+
             dgvSaleItems.DataSource = saleItemsList
             dgvSalesInfo.DataSource = saleList
 
@@ -31,6 +34,19 @@ Public Class frmSalesManagement
         End Try
     End Sub
 
+    'method to remove those Sales in case they have zero in their Total
+    Private Sub RemoveZeroTotalSales(saleList As List(Of Sale))
+        Dim saleBusiness As New SaleBusiness()
+        ' if the total in an element of the list is equal to zero, we  delete it
+        For Each sale In saleList.ToList() ' 
+            If sale.Total = 0 Then
+                ' delete from the db
+                saleBusiness.DeleteSaleById(sale.Id)
+                'delete from the list which is used in  the dgv
+                saleList.Remove(sale)
+            End If
+        Next
+    End Sub
 
     Private Sub ConfigurarColumnas()
         For Each column As DataGridViewColumn In dgvSaleItems.Columns
@@ -91,9 +107,9 @@ Public Class frmSalesManagement
                 saleBusiness.DeleteSaleItem(saleItem)
                 MessageBox.Show("Sale Item deleted successfully.")
 
-                LoadSaleItems()
                 'update the Total for the sum of all those items which belong to that Sale into the table Ventas 
                 saleBusiness.UpdateSaleTotal(saleItem.SaleId)
+                LoadSaleItems()
 
             End If
 

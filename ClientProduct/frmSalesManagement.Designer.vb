@@ -29,12 +29,12 @@ Partial Class frmSalesManagement
         Me.lblTotalItems = New System.Windows.Forms.Label()
         Me.lblTotalSoldItems = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtClienIdSearch = New System.Windows.Forms.TextBox()
+        Me.lblClientId = New System.Windows.Forms.Label()
         Me.txtIdSaleSearch = New System.Windows.Forms.TextBox()
         Me.lblIdSale = New System.Windows.Forms.Label()
         Me.dgvSalesInfo = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.txtClienIdSearch = New System.Windows.Forms.TextBox()
-        Me.lblClientId = New System.Windows.Forms.Label()
         CType(Me.dgvSaleItems, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvSalesInfo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -108,6 +108,22 @@ Partial Class frmSalesManagement
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Sales Info"
         '
+        'txtClienIdSearch
+        '
+        Me.txtClienIdSearch.Location = New System.Drawing.Point(493, 101)
+        Me.txtClienIdSearch.Name = "txtClienIdSearch"
+        Me.txtClienIdSearch.Size = New System.Drawing.Size(170, 20)
+        Me.txtClienIdSearch.TabIndex = 4
+        '
+        'lblClientId
+        '
+        Me.lblClientId.AutoSize = True
+        Me.lblClientId.Location = New System.Drawing.Point(448, 104)
+        Me.lblClientId.Name = "lblClientId"
+        Me.lblClientId.Size = New System.Drawing.Size(48, 13)
+        Me.lblClientId.TabIndex = 3
+        Me.lblClientId.Text = "Client Id:"
+        '
         'txtIdSaleSearch
         '
         Me.txtIdSaleSearch.Location = New System.Drawing.Point(493, 58)
@@ -147,22 +163,6 @@ Partial Class frmSalesManagement
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Sold Items Info"
         '
-        'txtClienIdSearch
-        '
-        Me.txtClienIdSearch.Location = New System.Drawing.Point(493, 101)
-        Me.txtClienIdSearch.Name = "txtClienIdSearch"
-        Me.txtClienIdSearch.Size = New System.Drawing.Size(170, 20)
-        Me.txtClienIdSearch.TabIndex = 4
-        '
-        'lblClientId
-        '
-        Me.lblClientId.AutoSize = True
-        Me.lblClientId.Location = New System.Drawing.Point(448, 104)
-        Me.lblClientId.Name = "lblClientId"
-        Me.lblClientId.Size = New System.Drawing.Size(48, 13)
-        Me.lblClientId.TabIndex = 3
-        Me.lblClientId.Text = "Client Id:"
-        '
         'frmSalesManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -171,7 +171,7 @@ Partial Class frmSalesManagement
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmSalesManagement"
-        Me.Text = "SalesManagement"
+        Me.Text = "Sales Management"
         CType(Me.dgvSaleItems, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

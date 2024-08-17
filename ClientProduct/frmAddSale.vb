@@ -17,7 +17,7 @@ Public Class frmAddSale
         Dim saleId As Integer
 
         Try
-            If ValidateRequiredFields() Then
+            If Not ValidateRequiredFields() Then
                 Return
             End If
 
@@ -67,35 +67,53 @@ Public Class frmAddSale
 
     Private Function ValidateRequiredFields() As Boolean
 
-
-        Dim valid As Boolean = False
-
         ' Check if required fields are empty
         If String.IsNullOrEmpty(txtIdClient.Text) OrElse
        String.IsNullOrEmpty(txtIdProduct.Text) OrElse
        String.IsNullOrEmpty(txtUnitPrice.Text) OrElse
        String.IsNullOrEmpty(txtQuantity.Text) Then
             MessageBox.Show("Please fill all required fields.")
-            Return True
+            Return False
         End If
 
         ' Validate numeric values
         Dim unitPrice As Double
         Dim quantity As Integer
+        Dim idClient As Integer
+        Dim idProduct As Integer
 
+        If Not Integer.TryParse(txtIdClient.Text, idClient) OrElse idClient <= 0 Then
+            MessageBox.Show("Client ID must be a positive integer greater than zero.")
+            Return False
+        End If
+
+        ' check that the id product is greater than zero 
+        If Not Integer.TryParse(txtIdProduct.Text, idProduct) OrElse idProduct <= 0 Then
+            MessageBox.Show("Product ID must be a positive integer greater than zero.")
+            Return False
+        End If
+
+        'if tryparse return false cause it couldn't convert the input into boolean, ask again
         If Not Double.TryParse(txtUnitPrice.Text, unitPrice) Then
             MessageBox.Show("Please enter a valid Unit Price.")
-            Return True
+            Return False
+        End If
+
+        'check if the unitPrice is higher than zero, if not, ask again
+        If unitPrice <= 0 Then
+            MessageBox.Show("Unit Price must be greater than zero.")
+            Return False
         End If
 
         If Not Integer.TryParse(txtQuantity.Text, quantity) OrElse quantity <= 0 Then
             MessageBox.Show("Please enter a valid Quantity (positive integer).")
-            Return True
+            Return False
         End If
 
         ' Additional validation checks can be added here
 
-        Return False
+        'if everything went good return true
+        Return True
     End Function
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
