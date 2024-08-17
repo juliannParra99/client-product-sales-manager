@@ -98,6 +98,12 @@
     <Compile Include="frmAddSale.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmReport.Designer.vb">
+      <DependentUpon>frmReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmUpdateSale.Designer.vb">
       <DependentUpon>frmUpdateSale.vb</DependentUpon>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddSale.resx">
       <DependentUpon>frmAddSale.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUpdateSale.resx">
       <DependentUpon>frmUpdateSale.vb</DependentUpon>

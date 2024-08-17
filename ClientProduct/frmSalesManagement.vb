@@ -163,4 +163,17 @@ Public Class frmSalesManagement
 
         End Try
     End Sub
+
+    Private Sub btnGenerateReport_Click(sender As Object, e As EventArgs) Handles btnGenerateReport.Click
+        ' Check if there are at least 3 sales
+        If saleList IsNot Nothing AndAlso saleList.Count >= 3 Then
+            ' Open the report form
+            Dim reportForm As New frmReport(saleList, saleItemsList)
+            reportForm.Show()
+        Else
+            ' Show a message if there are not enough sales
+            MessageBox.Show("At least 3 sales are required to generate a report.", "Insufficient Data", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+
 End Class

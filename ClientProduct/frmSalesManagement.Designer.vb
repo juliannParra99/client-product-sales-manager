@@ -35,6 +35,7 @@ Partial Class frmSalesManagement
         Me.lblIdSale = New System.Windows.Forms.Label()
         Me.dgvSalesInfo = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnGenerateReport = New System.Windows.Forms.Button()
         CType(Me.dgvSaleItems, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvSalesInfo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -163,11 +164,21 @@ Partial Class frmSalesManagement
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Sold Items Info"
         '
+        'btnGenerateReport
+        '
+        Me.btnGenerateReport.Location = New System.Drawing.Point(666, 292)
+        Me.btnGenerateReport.Name = "btnGenerateReport"
+        Me.btnGenerateReport.Size = New System.Drawing.Size(75, 23)
+        Me.btnGenerateReport.TabIndex = 8
+        Me.btnGenerateReport.Text = "Report "
+        Me.btnGenerateReport.UseVisualStyleBackColor = True
+        '
         'frmSalesManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(826, 526)
+        Me.Controls.Add(Me.btnGenerateReport)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmSalesManagement"
@@ -195,4 +206,5 @@ Partial Class frmSalesManagement
     Friend WithEvents lblIdSale As Label
     Friend WithEvents txtClienIdSearch As TextBox
     Friend WithEvents lblClientId As Label
+    Friend WithEvents btnGenerateReport As Button
 End Class
