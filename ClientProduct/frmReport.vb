@@ -152,5 +152,4 @@ Public Class frmReport
         lblLeastSoldProductQuantity.Text = product.Quantity.ToString()
     End Sub
 
-
 End Class

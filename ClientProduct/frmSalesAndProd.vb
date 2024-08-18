@@ -4,7 +4,7 @@ Imports Model.Models
 Imports Business.Business
 
 
-Public Class Form1
+Public Class frmSalesAndProd
     Private clientList As List(Of Client)
     Private productList As List(Of Product)
 
@@ -179,12 +179,6 @@ Public Class Form1
 
     Private Sub dgvProducts_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducts.CellContentClick
 
-    End Sub
-
-    Private Sub btnSalesManagment_Click(sender As Object, e As EventArgs) Handles btnSalesManagment.Click
-
-        Dim salesManagement As New frmSalesManagement()
-        salesManagement.ShowDialog()
     End Sub
 
 

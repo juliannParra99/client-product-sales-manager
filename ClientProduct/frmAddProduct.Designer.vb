@@ -44,7 +44,7 @@ Partial Class frmAddProduct
         Me.GroupBox1.Controls.Add(Me.txtCategory)
         Me.GroupBox1.Controls.Add(Me.txtPrice)
         Me.GroupBox1.Controls.Add(Me.txtName)
-        Me.GroupBox1.Location = New System.Drawing.Point(218, 42)
+        Me.GroupBox1.Location = New System.Drawing.Point(118, 25)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(358, 260)
         Me.GroupBox1.TabIndex = 1
@@ -120,7 +120,7 @@ Partial Class frmAddProduct
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(771, 311)
+        Me.ClientSize = New System.Drawing.Size(596, 311)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmAddProduct"
         Me.Text = "New Product"

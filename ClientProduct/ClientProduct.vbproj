@@ -73,11 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="frmSalesAndProd.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="frmSalesAndProd.Designer.vb">
+      <DependentUpon>frmSalesAndProd.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAddClients.Designer.vb">
@@ -114,6 +114,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -133,8 +134,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="frmSalesAndProd.resx">
+      <DependentUpon>frmSalesAndProd.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddClients.resx">
       <DependentUpon>frmAddClients.vb</DependentUpon>

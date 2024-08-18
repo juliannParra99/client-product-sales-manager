@@ -23,15 +23,6 @@ Partial Class frmReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.lblTotalSaleInfoHigh = New System.Windows.Forms.Label()
-        Me.lblSaleDateInfoHigh = New System.Windows.Forms.Label()
-        Me.lblClientIdInfoHigh = New System.Windows.Forms.Label()
-        Me.lblSaleIdInfoHigh = New System.Windows.Forms.Label()
-        Me.lblTotalSale = New System.Windows.Forms.Label()
-        Me.lblSaleDate = New System.Windows.Forms.Label()
-        Me.lblSaleId = New System.Windows.Forms.Label()
-        Me.lblClientId = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.lblTotalSaleInfoLow = New System.Windows.Forms.Label()
         Me.lblSaleDateInfoLow = New System.Windows.Forms.Label()
@@ -41,6 +32,15 @@ Partial Class frmReport
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.lblTotalSaleInfoHigh = New System.Windows.Forms.Label()
+        Me.lblSaleDateInfoHigh = New System.Windows.Forms.Label()
+        Me.lblClientIdInfoHigh = New System.Windows.Forms.Label()
+        Me.lblSaleIdInfoHigh = New System.Windows.Forms.Label()
+        Me.lblTotalSale = New System.Windows.Forms.Label()
+        Me.lblSaleDate = New System.Windows.Forms.Label()
+        Me.lblSaleId = New System.Windows.Forms.Label()
+        Me.lblClientId = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.lblLeastSoldProductQuantity = New System.Windows.Forms.Label()
@@ -53,8 +53,8 @@ Partial Class frmReport
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
@@ -70,95 +70,6 @@ Partial Class frmReport
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Sales"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.lblTotalSaleInfoHigh)
-        Me.GroupBox2.Controls.Add(Me.lblSaleDateInfoHigh)
-        Me.GroupBox2.Controls.Add(Me.lblClientIdInfoHigh)
-        Me.GroupBox2.Controls.Add(Me.lblSaleIdInfoHigh)
-        Me.GroupBox2.Controls.Add(Me.lblTotalSale)
-        Me.GroupBox2.Controls.Add(Me.lblSaleDate)
-        Me.GroupBox2.Controls.Add(Me.lblSaleId)
-        Me.GroupBox2.Controls.Add(Me.lblClientId)
-        Me.GroupBox2.Location = New System.Drawing.Point(32, 19)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(538, 80)
-        Me.GroupBox2.TabIndex = 1
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Sale With Highest Total"
-        '
-        'lblTotalSaleInfoHigh
-        '
-        Me.lblTotalSaleInfoHigh.AutoSize = True
-        Me.lblTotalSaleInfoHigh.Location = New System.Drawing.Point(442, 42)
-        Me.lblTotalSaleInfoHigh.Name = "lblTotalSaleInfoHigh"
-        Me.lblTotalSaleInfoHigh.Size = New System.Drawing.Size(10, 13)
-        Me.lblTotalSaleInfoHigh.TabIndex = 8
-        Me.lblTotalSaleInfoHigh.Text = "."
-        '
-        'lblSaleDateInfoHigh
-        '
-        Me.lblSaleDateInfoHigh.AutoSize = True
-        Me.lblSaleDateInfoHigh.Location = New System.Drawing.Point(334, 42)
-        Me.lblSaleDateInfoHigh.Name = "lblSaleDateInfoHigh"
-        Me.lblSaleDateInfoHigh.Size = New System.Drawing.Size(10, 13)
-        Me.lblSaleDateInfoHigh.TabIndex = 7
-        Me.lblSaleDateInfoHigh.Text = "."
-        '
-        'lblClientIdInfoHigh
-        '
-        Me.lblClientIdInfoHigh.AutoSize = True
-        Me.lblClientIdInfoHigh.Location = New System.Drawing.Point(181, 42)
-        Me.lblClientIdInfoHigh.Name = "lblClientIdInfoHigh"
-        Me.lblClientIdInfoHigh.Size = New System.Drawing.Size(10, 13)
-        Me.lblClientIdInfoHigh.TabIndex = 6
-        Me.lblClientIdInfoHigh.Text = "."
-        '
-        'lblSaleIdInfoHigh
-        '
-        Me.lblSaleIdInfoHigh.AutoSize = True
-        Me.lblSaleIdInfoHigh.Location = New System.Drawing.Point(77, 42)
-        Me.lblSaleIdInfoHigh.Name = "lblSaleIdInfoHigh"
-        Me.lblSaleIdInfoHigh.Size = New System.Drawing.Size(10, 13)
-        Me.lblSaleIdInfoHigh.TabIndex = 5
-        Me.lblSaleIdInfoHigh.Text = "."
-        '
-        'lblTotalSale
-        '
-        Me.lblTotalSale.AutoSize = True
-        Me.lblTotalSale.Location = New System.Drawing.Point(399, 42)
-        Me.lblTotalSale.Name = "lblTotalSale"
-        Me.lblTotalSale.Size = New System.Drawing.Size(37, 13)
-        Me.lblTotalSale.TabIndex = 4
-        Me.lblTotalSale.Text = "Total: "
-        '
-        'lblSaleDate
-        '
-        Me.lblSaleDate.AutoSize = True
-        Me.lblSaleDate.Location = New System.Drawing.Point(268, 42)
-        Me.lblSaleDate.Name = "lblSaleDate"
-        Me.lblSaleDate.Size = New System.Drawing.Size(60, 13)
-        Me.lblSaleDate.TabIndex = 3
-        Me.lblSaleDate.Text = "Sale Date: "
-        '
-        'lblSaleId
-        '
-        Me.lblSaleId.AutoSize = True
-        Me.lblSaleId.Location = New System.Drawing.Point(28, 42)
-        Me.lblSaleId.Name = "lblSaleId"
-        Me.lblSaleId.Size = New System.Drawing.Size(43, 13)
-        Me.lblSaleId.TabIndex = 2
-        Me.lblSaleId.Text = "Sale Id:"
-        '
-        'lblClientId
-        '
-        Me.lblClientId.AutoSize = True
-        Me.lblClientId.Location = New System.Drawing.Point(124, 42)
-        Me.lblClientId.Name = "lblClientId"
-        Me.lblClientId.Size = New System.Drawing.Size(51, 13)
-        Me.lblClientId.TabIndex = 1
-        Me.lblClientId.Text = "Client Id: "
         '
         'GroupBox3
         '
@@ -180,7 +91,7 @@ Partial Class frmReport
         'lblTotalSaleInfoLow
         '
         Me.lblTotalSaleInfoLow.AutoSize = True
-        Me.lblTotalSaleInfoLow.Location = New System.Drawing.Point(442, 42)
+        Me.lblTotalSaleInfoLow.Location = New System.Drawing.Point(468, 42)
         Me.lblTotalSaleInfoLow.Name = "lblTotalSaleInfoLow"
         Me.lblTotalSaleInfoLow.Size = New System.Drawing.Size(10, 13)
         Me.lblTotalSaleInfoLow.TabIndex = 8
@@ -198,7 +109,7 @@ Partial Class frmReport
         'lblClientIdInfoLow
         '
         Me.lblClientIdInfoLow.AutoSize = True
-        Me.lblClientIdInfoLow.Location = New System.Drawing.Point(181, 42)
+        Me.lblClientIdInfoLow.Location = New System.Drawing.Point(213, 42)
         Me.lblClientIdInfoLow.Name = "lblClientIdInfoLow"
         Me.lblClientIdInfoLow.Size = New System.Drawing.Size(10, 13)
         Me.lblClientIdInfoLow.TabIndex = 6
@@ -216,7 +127,7 @@ Partial Class frmReport
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(399, 42)
+        Me.Label6.Location = New System.Drawing.Point(425, 42)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(37, 13)
         Me.Label6.TabIndex = 4
@@ -243,11 +154,100 @@ Partial Class frmReport
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(124, 42)
+        Me.Label9.Location = New System.Drawing.Point(156, 42)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(51, 13)
         Me.Label9.TabIndex = 1
         Me.Label9.Text = "Client Id: "
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.lblTotalSaleInfoHigh)
+        Me.GroupBox2.Controls.Add(Me.lblSaleDateInfoHigh)
+        Me.GroupBox2.Controls.Add(Me.lblClientIdInfoHigh)
+        Me.GroupBox2.Controls.Add(Me.lblSaleIdInfoHigh)
+        Me.GroupBox2.Controls.Add(Me.lblTotalSale)
+        Me.GroupBox2.Controls.Add(Me.lblSaleDate)
+        Me.GroupBox2.Controls.Add(Me.lblSaleId)
+        Me.GroupBox2.Controls.Add(Me.lblClientId)
+        Me.GroupBox2.Location = New System.Drawing.Point(32, 19)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(538, 80)
+        Me.GroupBox2.TabIndex = 1
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Sale With Highest Total"
+        '
+        'lblTotalSaleInfoHigh
+        '
+        Me.lblTotalSaleInfoHigh.AutoSize = True
+        Me.lblTotalSaleInfoHigh.Location = New System.Drawing.Point(468, 42)
+        Me.lblTotalSaleInfoHigh.Name = "lblTotalSaleInfoHigh"
+        Me.lblTotalSaleInfoHigh.Size = New System.Drawing.Size(10, 13)
+        Me.lblTotalSaleInfoHigh.TabIndex = 8
+        Me.lblTotalSaleInfoHigh.Text = "."
+        '
+        'lblSaleDateInfoHigh
+        '
+        Me.lblSaleDateInfoHigh.AutoSize = True
+        Me.lblSaleDateInfoHigh.Location = New System.Drawing.Point(334, 42)
+        Me.lblSaleDateInfoHigh.Name = "lblSaleDateInfoHigh"
+        Me.lblSaleDateInfoHigh.Size = New System.Drawing.Size(10, 13)
+        Me.lblSaleDateInfoHigh.TabIndex = 7
+        Me.lblSaleDateInfoHigh.Text = "."
+        '
+        'lblClientIdInfoHigh
+        '
+        Me.lblClientIdInfoHigh.AutoSize = True
+        Me.lblClientIdInfoHigh.Location = New System.Drawing.Point(213, 42)
+        Me.lblClientIdInfoHigh.Name = "lblClientIdInfoHigh"
+        Me.lblClientIdInfoHigh.Size = New System.Drawing.Size(10, 13)
+        Me.lblClientIdInfoHigh.TabIndex = 6
+        Me.lblClientIdInfoHigh.Text = "."
+        '
+        'lblSaleIdInfoHigh
+        '
+        Me.lblSaleIdInfoHigh.AutoSize = True
+        Me.lblSaleIdInfoHigh.Location = New System.Drawing.Point(77, 42)
+        Me.lblSaleIdInfoHigh.Name = "lblSaleIdInfoHigh"
+        Me.lblSaleIdInfoHigh.Size = New System.Drawing.Size(10, 13)
+        Me.lblSaleIdInfoHigh.TabIndex = 5
+        Me.lblSaleIdInfoHigh.Text = "."
+        '
+        'lblTotalSale
+        '
+        Me.lblTotalSale.AutoSize = True
+        Me.lblTotalSale.Location = New System.Drawing.Point(425, 42)
+        Me.lblTotalSale.Name = "lblTotalSale"
+        Me.lblTotalSale.Size = New System.Drawing.Size(37, 13)
+        Me.lblTotalSale.TabIndex = 4
+        Me.lblTotalSale.Text = "Total: "
+        '
+        'lblSaleDate
+        '
+        Me.lblSaleDate.AutoSize = True
+        Me.lblSaleDate.Location = New System.Drawing.Point(268, 42)
+        Me.lblSaleDate.Name = "lblSaleDate"
+        Me.lblSaleDate.Size = New System.Drawing.Size(60, 13)
+        Me.lblSaleDate.TabIndex = 3
+        Me.lblSaleDate.Text = "Sale Date: "
+        '
+        'lblSaleId
+        '
+        Me.lblSaleId.AutoSize = True
+        Me.lblSaleId.Location = New System.Drawing.Point(28, 42)
+        Me.lblSaleId.Name = "lblSaleId"
+        Me.lblSaleId.Size = New System.Drawing.Size(43, 13)
+        Me.lblSaleId.TabIndex = 2
+        Me.lblSaleId.Text = "Sale Id:"
+        '
+        'lblClientId
+        '
+        Me.lblClientId.AutoSize = True
+        Me.lblClientId.Location = New System.Drawing.Point(156, 42)
+        Me.lblClientId.Name = "lblClientId"
+        Me.lblClientId.Size = New System.Drawing.Size(51, 13)
+        Me.lblClientId.TabIndex = 1
+        Me.lblClientId.Text = "Client Id: "
         '
         'GroupBox4
         '
@@ -368,10 +368,10 @@ Partial Class frmReport
         Me.Name = "frmReport"
         Me.Text = "Report"
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()

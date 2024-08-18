@@ -36,6 +36,7 @@ Partial Class frmSalesManagement
         Me.dgvSalesInfo = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnGenerateReport = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dgvSaleItems, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvSalesInfo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,16 +72,17 @@ Partial Class frmSalesManagement
         '
         'dgvSaleItems
         '
+        Me.dgvSaleItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvSaleItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvSaleItems.Location = New System.Drawing.Point(36, 28)
+        Me.dgvSaleItems.Location = New System.Drawing.Point(20, 28)
         Me.dgvSaleItems.Name = "dgvSaleItems"
-        Me.dgvSaleItems.Size = New System.Drawing.Size(521, 150)
+        Me.dgvSaleItems.Size = New System.Drawing.Size(488, 150)
         Me.dgvSaleItems.TabIndex = 3
         '
         'lblTotalItems
         '
         Me.lblTotalItems.AutoSize = True
-        Me.lblTotalItems.Location = New System.Drawing.Point(392, 194)
+        Me.lblTotalItems.Location = New System.Drawing.Point(350, 192)
         Me.lblTotalItems.Name = "lblTotalItems"
         Me.lblTotalItems.Size = New System.Drawing.Size(116, 13)
         Me.lblTotalItems.TabIndex = 4
@@ -89,7 +91,7 @@ Partial Class frmSalesManagement
         'lblTotalSoldItems
         '
         Me.lblTotalSoldItems.AutoSize = True
-        Me.lblTotalSoldItems.Location = New System.Drawing.Point(514, 194)
+        Me.lblTotalSoldItems.Location = New System.Drawing.Point(472, 192)
         Me.lblTotalSoldItems.Name = "lblTotalSoldItems"
         Me.lblTotalSoldItems.Size = New System.Drawing.Size(10, 13)
         Me.lblTotalSoldItems.TabIndex = 5
@@ -102,16 +104,16 @@ Partial Class frmSalesManagement
         Me.GroupBox1.Controls.Add(Me.txtIdSaleSearch)
         Me.GroupBox1.Controls.Add(Me.lblIdSale)
         Me.GroupBox1.Controls.Add(Me.dgvSalesInfo)
-        Me.GroupBox1.Location = New System.Drawing.Point(40, 320)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 300)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(701, 194)
+        Me.GroupBox1.Size = New System.Drawing.Size(655, 201)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Sales Info"
         '
         'txtClienIdSearch
         '
-        Me.txtClienIdSearch.Location = New System.Drawing.Point(493, 101)
+        Me.txtClienIdSearch.Location = New System.Drawing.Point(463, 84)
         Me.txtClienIdSearch.Name = "txtClienIdSearch"
         Me.txtClienIdSearch.Size = New System.Drawing.Size(170, 20)
         Me.txtClienIdSearch.TabIndex = 4
@@ -119,7 +121,7 @@ Partial Class frmSalesManagement
         'lblClientId
         '
         Me.lblClientId.AutoSize = True
-        Me.lblClientId.Location = New System.Drawing.Point(448, 104)
+        Me.lblClientId.Location = New System.Drawing.Point(418, 87)
         Me.lblClientId.Name = "lblClientId"
         Me.lblClientId.Size = New System.Drawing.Size(48, 13)
         Me.lblClientId.TabIndex = 3
@@ -127,7 +129,7 @@ Partial Class frmSalesManagement
         '
         'txtIdSaleSearch
         '
-        Me.txtIdSaleSearch.Location = New System.Drawing.Point(493, 58)
+        Me.txtIdSaleSearch.Location = New System.Drawing.Point(463, 41)
         Me.txtIdSaleSearch.Name = "txtIdSaleSearch"
         Me.txtIdSaleSearch.Size = New System.Drawing.Size(170, 20)
         Me.txtIdSaleSearch.TabIndex = 2
@@ -135,7 +137,7 @@ Partial Class frmSalesManagement
         'lblIdSale
         '
         Me.lblIdSale.AutoSize = True
-        Me.lblIdSale.Location = New System.Drawing.Point(448, 61)
+        Me.lblIdSale.Location = New System.Drawing.Point(418, 44)
         Me.lblIdSale.Name = "lblIdSale"
         Me.lblIdSale.Size = New System.Drawing.Size(43, 13)
         Me.lblIdSale.TabIndex = 1
@@ -143,6 +145,7 @@ Partial Class frmSalesManagement
         '
         'dgvSalesInfo
         '
+        Me.dgvSalesInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvSalesInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSalesInfo.Location = New System.Drawing.Point(20, 29)
         Me.dgvSalesInfo.Name = "dgvSalesInfo"
@@ -157,27 +160,37 @@ Partial Class frmSalesManagement
         Me.GroupBox2.Controls.Add(Me.btnUpdateSale)
         Me.GroupBox2.Controls.Add(Me.lblTotalItems)
         Me.GroupBox2.Controls.Add(Me.btnDeleteSale)
-        Me.GroupBox2.Location = New System.Drawing.Point(40, 22)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(717, 264)
+        Me.GroupBox2.Size = New System.Drawing.Size(655, 264)
         Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Sold Items Info"
         '
         'btnGenerateReport
         '
-        Me.btnGenerateReport.Location = New System.Drawing.Point(666, 292)
+        Me.btnGenerateReport.Location = New System.Drawing.Point(673, 83)
         Me.btnGenerateReport.Name = "btnGenerateReport"
-        Me.btnGenerateReport.Size = New System.Drawing.Size(75, 23)
+        Me.btnGenerateReport.Size = New System.Drawing.Size(111, 23)
         Me.btnGenerateReport.TabIndex = 8
-        Me.btnGenerateReport.Text = "Report "
+        Me.btnGenerateReport.Text = "Generate Report "
         Me.btnGenerateReport.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(673, 40)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(111, 23)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = " Sales and Products"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'frmSalesManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(826, 526)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnGenerateReport)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -207,4 +220,5 @@ Partial Class frmSalesManagement
     Friend WithEvents txtClienIdSearch As TextBox
     Friend WithEvents lblClientId As Label
     Friend WithEvents btnGenerateReport As Button
+    Friend WithEvents Button1 As Button
 End Class
