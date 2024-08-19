@@ -1,5 +1,10 @@
 # Visual Basic .NET Sales Management Application
 
+
+
+https://github.com/user-attachments/assets/6131520d-49f9-43c2-98f2-4172ed6090eb
+
+
 ## Description
 
 This is a Visual Basic .NET application designed for managing clients, products, and sales. The application interacts with a SQL database and provides functionalities for:
@@ -19,7 +24,7 @@ This is a Visual Basic .NET application designed for managing clients, products,
 ## Requirements
 
 - **.NET Framework**: This application requires .NET Framework version 4.7.2 or higher.
-- **Database**: SQL Server or any compatible SQL database.
+- **Database**: SQL Server or any compatible SQL database.The database script is into the 'Business' folder
 
 ## Installation
 
